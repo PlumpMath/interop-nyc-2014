@@ -1,0 +1,20 @@
+---
+
+snmp_contact: JASON_EDELMAN
+snmp_location: INTEROP
+snmp_ro: ro_string
+snmp_rw: rw_string
+snmp_trap_dest: 10.10.100.10
+
+dns_server: 10.10.10.11
+ntp_server: 10.10.10.12 
+
+vlans:
+  - { id: 10, name: web_servers }
+  - { id: 20, name: app_servers }
+  - { id: 30, name: db_servers }
+
+users:
+  - { local_un: interop, local_pw: interop }
+  - { local_un: newyork, local_pw: newyork }
+

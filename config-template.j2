@@ -1,0 +1,20 @@
+
+
+snmp-server community {{ snmp_ro }} RO 5
+snmp-server community {{ snmp_rw }} RW 95
+snmp-server location {{ snmp_location }}
+snmp-server contact {{ snmp_contact }}
+snmp-server host {{ snmp_snmp_trap_dest }}
+
+ip name-server {{ dns_server }}
+ntp server {{ ntp_server }} 
+
+{% for user in users %} 
+username {{ user.local_un }} password {{ user.local_pw }} {% endfor %}
+
+{% for vlan in vlans %}
+vlan {{ vlan.id }}
+ name {{ vlan.name }}  {% endfor %}
+
+
+ 
